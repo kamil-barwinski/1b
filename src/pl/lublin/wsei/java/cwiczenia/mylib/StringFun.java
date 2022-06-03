@@ -1,5 +1,5 @@
 package pl.lublin.wsei.java.cwiczenia.mylib;
-
+import org.apache.commons.lang3.StringUtils;
 
 import java.util.Locale;
 
@@ -39,4 +39,14 @@ public class StringFun {
         }
         return result.toString();
     }
+    public static String dec(String arg) {
+        String[] split = StringUtils.splitByCharacterTypeCamelCase(arg);
+        var result = new StringBuilder();
+        for (int i = 0; i < split.length; i++) {
+            StringBuilder sb = new StringBuilder(split[i].charAt(0) + split[i].substring(1).toLowerCase()).append(" ");
+            result.append(sb);
+        }
+        return result.toString();
+    }
+
 }
